@@ -20,8 +20,8 @@ while idade < 0 or idade > 150:
 while salario < 0:
     salario = float(input("Digite seu salário: "))
 
-while sexo !='f' or sexo !='F' or sexo !='m' or sexo !='M':
+while (sexo !='f' and sexo !='m'):
     sexo = input("Digite F ou M para seu sexo: ")
 
-while estado != 's' or estado != 'c' or estado != 'v' or estado != 'd':
+while estado != 's' and estado != 'c' and estado != 'v' and estado != 'd':
     estado = input("Digite s para solteiro, c para casado, v para viúvo ou d para divorciado: ")
