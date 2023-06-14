@@ -9,3 +9,5 @@ print(variavel[0:len(variavel):1])
 print(variavel[0:23:2])
 print(variavel[9:15:3])
 print(variavel[::-1])
+
+#teste
