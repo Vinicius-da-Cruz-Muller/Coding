@@ -29,11 +29,11 @@ def plot_route_with_cities(cities, route):
     plt.pause(0.01)
 
 
-cities = generate_random_cities(10)
+cities = generate_random_cities(10) #---------------------------------------------
 
 population_size = 100
 num_generations = 50
-mutation_rate = 0.01
+mutation_rate = 0.05 #se aumentar esse, pode diminuir o numero de gerações e vice versa
 
 
 def generate_initial_population(cities, population_size):
