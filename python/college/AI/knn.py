@@ -6,9 +6,9 @@ train_data = pd.read_csv('knn.csv')
 test_data = pd.read_csv('knn_testecsv.csv')
 
 #print (train_data.columns)
-X_train = train_data['R','G','B']
+X_train = train_data[['R','G','B']]
 Y_train = train_data['Classes']
-X_test = test_data['R', 'G', 'B']
+X_test = test_data[['R', 'G', 'B']]
 y_test = test_data['Classes']
 
 classes = train_data['Classes'].unique()
