@@ -1,0 +1,17 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<petal_width &le; 0.75<br/>gini = 0.666<br/>samples = 100<br/>value = [34, 34, 32]<br/>class = Iris-setosa>, fillcolor="#ffffff"] ;
+1 [label=<gini = 0.0<br/>samples = 34<br/>value = [34, 0, 0]<br/>class = Iris-setosa>, fillcolor="#e58139"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<petal_width &le; 1.65<br/>gini = 0.5<br/>samples = 66<br/>value = [0, 34, 32]<br/>class = Iris-versicolor>, fillcolor="#f3fdf8"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+3 [label=<petal_length &le; 5.35<br/>gini = 0.105<br/>samples = 36<br/>value = [0, 34, 2]<br/>class = Iris-versicolor>, fillcolor="#45e788"] ;
+2 -> 3 ;
+4 [label=<gini = 0.0<br/>samples = 34<br/>value = [0, 34, 0]<br/>class = Iris-versicolor>, fillcolor="#39e581"] ;
+3 -> 4 ;
+5 [label=<gini = 0.0<br/>samples = 2<br/>value = [0, 0, 2]<br/>class = Iris-virginica>, fillcolor="#8139e5"] ;
+3 -> 5 ;
+6 [label=<gini = 0.0<br/>samples = 30<br/>value = [0, 0, 30]<br/>class = Iris-virginica>, fillcolor="#8139e5"] ;
+2 -> 6 ;
+}
