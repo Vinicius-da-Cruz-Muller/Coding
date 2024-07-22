@@ -1,0 +1,31 @@
+h1{
+    color:red;
+}
+
+@media screen and (max-width:800px){
+    h1{
+        color:purple;
+    }
+}
+
+p{
+    color:purple;
+    background-color: yellow;
+}
+
+@media screen and  (min-width: 800px){
+    p{
+        color:yellow;
+        background-color: purple;
+    }
+}
+
+h3{
+    display:none
+}
+
+@media screen and (orientation:landscape){
+    h3{
+        display:block;
+    }
+}
