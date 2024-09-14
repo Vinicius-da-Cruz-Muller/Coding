@@ -84,24 +84,58 @@
 
 //Mutação
 
-const a = {
-    name: "Cersei "
-};
+// const a = {
+//     name: "Cersei "
+// };
 
-const b = a;
+// const b = a;
 
-console.log(a);
-console.log(b);
-console.log(a === b);
+// console.log(a);
+// console.log(b);
+// console.log(a === b);
 
-a.age = 32;
+// a.age = 32;
 
-console.log(a); //idade vai para os dois
-console.log(b); 
+// console.log(a); //idade vai para os dois
+// console.log(b); 
 
-delete b.age;
+// delete b.age;
 
-console.log(a); //apaga nos dois
-console.log(b); 
+// console.log(a); //apaga nos dois
+// console.log(b); 
 
 //logo const b = a não é um objeto novo, e sim uma referância
+
+//Loops em arrays, pop, push, shift e unshift e indices
+
+const users  = ["Tywin", "Cersei", "Jaime", "Tyrion"];
+
+for(let i = 0; i < users.length; i++){
+    console.log(`Listando o usuário: ${users[i]}`);
+}
+
+users.push("Gemma"); //adiciona elemento ao fim do array
+
+console.log(users);
+
+users.pop(); //retira o último elemento do array
+
+console.log(users);
+
+users.unshift("Lann") //adiciona elemento ao início do array
+
+console.log(users);
+
+users.shift() //retira elemento do início do array
+
+console.log(users);
+
+users.push("Tywin");
+
+console.log(users.indexOf("Cersei"));
+console.log(users.indexOf("Tywin"));
+console.log(users.lastIndexOf("Tywin"));
+console.log(users.indexOf("Lann")); //retorna -1 porque o elemento não existe no array
+
+const siblings = users.slice(1,4); //ignora o último, elemento posição 4 não aparece
+console.log(siblings); //se for passado apenas um número ao slice, ele cortará dali em diante
