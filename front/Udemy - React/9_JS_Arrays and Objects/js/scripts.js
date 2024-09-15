@@ -84,25 +84,25 @@
 
 //Mutação
 
-// const a = {
-//     name: "Cersei "
-// };
+const a = {
+    name: "Cersei "
+};
 
-// const b = a;
+const b = a;
 
-// console.log(a);
-// console.log(b);
-// console.log(a === b);
+console.log(a);
+console.log(b);
+console.log(a === b);
 
-// a.age = 32;
+a.age = 32;
 
-// console.log(a); //idade vai para os dois
-// console.log(b); 
+console.log(a); //idade vai para os dois
+console.log(b); 
 
-// delete b.age;
+delete b.age;
 
-// console.log(a); //apaga nos dois
-// console.log(b); 
+console.log(a); //apaga nos dois
+console.log(b); 
 
 //logo const b = a não é um objeto novo, e sim uma referância
 
@@ -139,3 +139,148 @@ console.log(users.indexOf("Lann")); //retorna -1 porque o elemento não existe n
 
 const siblings = users.slice(1,4); //ignora o último, elemento posição 4 não aparece
 console.log(siblings); //se for passado apenas um número ao slice, ele cortará dali em diante
+
+//Foreach
+
+const nums = [1, 2, 3, 4, 5];
+
+nums.forEach((numero) => {
+    console.log(`O número é ${numero}`);
+});
+
+const posts = [
+    {title: "Primeiro post", category: "Javascript"},
+    {title: "Segundo post", category: "Python"},
+    {title: "Terceiro post", category: "Java"},
+    {title: "Quarto post", category: "SQL"},
+];
+
+posts.forEach((post) => {
+    console.log(`Exibindo post: ${post.title}, vai falar sobre ${post.category}`);
+});
+
+// Include
+
+const houses = ["Targaryen", "Lannister", "Stark", "Baratheon", "Hightower"];
+
+console.log(houses.includes("Targaryen"));
+
+console.log(houses.includes("Greyjoy"));
+
+if(houses.includes("Lannister")){
+    console.log("Existem Lannisters no seu registro!");
+}
+
+//Includes confere se existe um elemento no vetor
+
+//Reverse
+
+console.log(houses.reverse());
+
+// Trim
+
+// Trim remove caracteres especiais e espaços em branco de um texto
+
+const trimTeste = " testando \n ";
+
+console.log(trimTeste);
+console.log(trimTeste.trim());
+console.log(trimTeste.length);
+console.log(trimTeste.trim().length);
+
+//Padstart
+
+const digit = "1";
+
+const serial = digit.padStart(4, "0"); //adiciona zeros ao começo até o tamanho máximo de 4
+
+console.log(digit);
+console.log(serial);
+
+const chaveSerial = serial.padEnd(8, "0") //adiciona zeros ao final até o tamanho máximo de 8
+
+console.log(chaveSerial);
+
+//split - divide uma string em um array, determinado por um separador;
+
+const frase = "O rato roeu a roupa do rei de Roma"
+
+const fraseSeparada = frase.split(" ")
+console.log(fraseSeparada) //separa nos espaços em branco
+console.log(frase.split("r")) //separa a cada r minúsculo
+
+//Join
+const fraseUnida = fraseSeparada.join(" ")
+
+console.log(fraseUnida);
+
+//Repeat - repete um texto n vezes
+
+console.log("Teste ".repeat(5))
+
+//Rest operator - utilizado para receber um número indefinido de parâmetros em uma função
+
+const somaInfinita = (...args) => {
+    let total = 0
+
+    for(let i = 0 ; i < args.length; i++){
+        total += args[i];
+    }
+    return total;
+};
+
+console.log(somaInfinita(1, 2, 3));
+console.log(somaInfinita(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+// For...of - semelhante ao for, mas mais simples
+
+const somaInfinita2 = (...args) =>{
+    let total = 0;
+    for(num of args){
+        total += num;
+    }
+    return total;
+};
+
+console.log(somaInfinita2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+
+//Destructuring em objetos
+const userDetails = {
+    firstName: "Vinícius",
+    middleName: "da Cruz",
+    lastName: "Muller",
+    job: "Desenvolvedor de Software"
+};
+
+const {firstName, middleName, lastName, job} = userDetails; //separa cada uma das propriedades em uma variável separada
+
+console.log(firstName, middleName, lastName, job);
+
+const {firstName: primeiroNome} = userDetails; //atribui a propriedade a uma nova variável
+
+console.log(primeiroNome);
+
+//Destructuring em arrays
+
+const myDogs = ["Átila", "Zeus", "Lorde", "Tyrion"];
+
+const [maisVelho, maior, maisRapida, menor] = myDogs; //atribui as variáveis na ordem do vetor, e não por propriedade
+
+console.log(`Meu cachorro mais velho é o ${maisVelho}`);
+
+//JSON
+
+const myJSON = '{"name": "Vinícius", "age": 24, "skills": ["PowerBI", "Python", "Javascript"]}';
+//estrutura de um json com string, number e array
+//geralmente é recebido de algum lugar, como uma API.
+//muitas vezes precisamos converter um JSON para objeto JS ouum objeto JS para JSON
+console.log(myJSON);
+
+const myObjeto = JSON.parse(myJSON);
+console.log(myObjeto);
+
+// const badJson = '{"name": Matheus}';
+// const convertBadJson = JSON.parse(badJson);
+
+const myNewJson = JSON.stringify(myObjeto);
+console.log(myNewJson);
