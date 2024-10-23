@@ -1,1 +1,0 @@
-Upei na pasta do GitHub para manter o código preservado, mas muito provavelmente ele não irá rodar prontamente, pois são uma cópia de um ambiente virtual onde estavam todas as bibliotecas instaladas.
